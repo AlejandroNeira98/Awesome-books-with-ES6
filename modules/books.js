@@ -7,7 +7,7 @@ export class Methods {
     this.books = [];
   }
 
-  init = function () {
+  init = () => {
     if (JSON.parse(localStorage.getItem('books')) !== null) {
       this.books = JSON.parse(localStorage.getItem('books'));
       this.books.forEach((element) => {
@@ -16,17 +16,17 @@ export class Methods {
     }
   };
 
-  removeBook = function (time) {
+  removeBook = (time) => {
     this.books = this.books.filter((book) => book.time !== time);
     localStorage.setItem('books', JSON.stringify(this.books));
   };
 
-  removeBtnEventListener = function (element, time) {
+  removeBtnEventListener = (element, time) => {
     this.removeBook(time);
     element.parentElement.remove();
   };
 
-  addBookToDocument = function (book) {
+  addBookToDocument = (book) => {
     const booksDiv = document.getElementById('books');
 
     const bookDiv = document.createElement('div');
@@ -46,7 +46,7 @@ export class Methods {
     });
   };
 
-  addBookToLocalStorage = function (title, author) {
+  addBookToLocalStorage = (title, author) => {
     const d = new Date();
     const time = d.getTime();
     this.books.push({

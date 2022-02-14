@@ -4,6 +4,17 @@
 
 ![imagen](https://user-images.githubusercontent.com/93448210/148102835-146307af-594e-42df-909c-22a943232d2a.png)
 
+# Set up instructions:
+
+-git clone https://github.com/AlejandroNeira98/Awesome-books-with-ES6.git
+
+-cd Awesome-books-with-ES6
+
+-npm install --save luxon 
+
+-open folder in vs code and open `index.html` with live server.
+
+
 # Build with
 
 - HTML

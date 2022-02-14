@@ -1,36 +1,40 @@
-import { currenTime } from "./date.js";
+import currenTime from './date.js';
 
-export let windowLoad = () =>{window.addEventListener('load', () => {
-  const navBtns = document.querySelectorAll('nav > a');
-  const booksSection = document.querySelector('.all-books');
-  const formSection = document.querySelector('#form');
-  const contactSection = document.querySelector('#contact');
-  const timeElement = document.querySelector('span');
+const PwindowLoad = () => {
+  window.addEventListener('load', () => {
+    const navBtns = document.querySelectorAll('nav > a');
+    const booksSection = document.querySelector('.all-books');
+    const formSection = document.querySelector('#form');
+    const contactSection = document.querySelector('#contact');
+    const timeElement = document.querySelector('span');
 
-  setInterval(() => {
-    currenTime(timeElement);
-  }, 1000);
+    setInterval(() => {
+      currenTime(timeElement);
+    }, 1000);
 
-  navBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const i = document.querySelector('.active');
-      if (i != null) {
-        i.classList.remove('active');
-      }
-      btn.className += 'active';
-      if (btn.getAttribute('href') === '#books') {
-        booksSection.classList.remove('hidden');
-        formSection.classList.add('hidden');
-        contactSection.classList.add('hidden');
-      } else if (btn.getAttribute('href') === '#form') {
-        formSection.classList.remove('hidden');
-        booksSection.classList.add('hidden');
-        contactSection.classList.add('hidden');
-      } else {
-        contactSection.classList.remove('hidden');
-        formSection.classList.add('hidden');
-        booksSection.classList.add('hidden');
-      }
+    navBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const i = document.querySelector('.active');
+        if (i != null) {
+          i.classList.remove('active');
+        }
+        btn.className += 'active';
+        if (btn.getAttribute('href') === '#books') {
+          booksSection.classList.remove('hidden');
+          formSection.classList.add('hidden');
+          contactSection.classList.add('hidden');
+        } else if (btn.getAttribute('href') === '#form') {
+          formSection.classList.remove('hidden');
+          booksSection.classList.add('hidden');
+          contactSection.classList.add('hidden');
+        } else {
+          contactSection.classList.remove('hidden');
+          formSection.classList.add('hidden');
+          booksSection.classList.add('hidden');
+        }
+      });
     });
   });
-});}
+};
+
+export default PwindowLoad;

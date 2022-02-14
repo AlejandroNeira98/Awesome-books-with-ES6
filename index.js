@@ -1,5 +1,5 @@
-import * as page from "./modules/Page-change.js";
-import * as books from "./modules/books.js";
+import PwindowLoad from './modules/Page-change.js';
+import { windowLoad } from './modules/books.js';
 
-page.windowLoad();
-books.windowLoad();
+PwindowLoad();
+windowLoad();

@@ -63,17 +63,19 @@ export class Methods {
   };
 }
 
-export let windowLoad = () => {window.addEventListener('load', () => {
-  const method = new Methods();
+export const windowLoad = () => {
+  window.addEventListener('load', () => {
+    const method = new Methods();
 
-  method.init();
+    method.init();
 
-  submitButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    const author = authorInput.value;
-    const title = titleInput.value;
-    method.addBookToLocalStorage(title, author);
-    authorInput.value = null;
-    titleInput.value = null;
+    submitButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      const author = authorInput.value;
+      const title = titleInput.value;
+      method.addBookToLocalStorage(title, author);
+      authorInput.value = null;
+      titleInput.value = null;
+    });
   });
-});}
+};
